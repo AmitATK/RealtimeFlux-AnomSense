@@ -27,15 +27,18 @@ for message in consumer:
 
     data_buffer.append(values)
 
-    # Train model once we have enough data
+    # Train model once i have enough data
     if len(data_buffer) > 30:
         detector.fit(np.array(data_buffer))
 
         is_anomaly = detector.predict(values)
+        score = detector.anomaly_score(values)   # <-- Added line
 
+        # Include both anomaly label + score
         output = {
             **metrics,
-            "anomaly": bool(is_anomaly)
+            "anomaly": bool(is_anomaly),
+            "score": float(score)
         }
 
         producer.send("processed_metrics", output)

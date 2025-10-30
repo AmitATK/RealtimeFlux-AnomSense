@@ -10,4 +10,7 @@ class AnomalyDetector:
 
     def predict(self, value):
         pred = self.model.predict([value])
-        return pred[0] == -1  # -1 means anomaly
+        return pred[0] == -1
+def anomaly_score(self, value):
+    score = self.model.decision_function([value])[0]
+    return abs(score)

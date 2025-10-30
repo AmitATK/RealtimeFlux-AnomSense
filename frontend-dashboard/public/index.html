@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta
+      name="description"
+      content="Real-Time System Monitoring Dashboard with Live Metrics and Anomaly Detection"
+    />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+
+    <title>System Monitoring Dashboard</title>
+
+    <!-- CSP allows WebSockets for local and secure connections -->
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="
+        default-src 'self' data: blob: ws: wss:;
+        script-src 'self' 'unsafe-inline' 'unsafe-eval';
+        style-src 'self' 'unsafe-inline';
+        img-src 'self' data:;
+        connect-src 'self' http://localhost:4000 ws://localhost:4000;
+      "
+    />
+  </head>
+
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"></div>
+  </body>
+</html>
+
+
+<!-- When you deploy (Render, Vercel, AWS, etc.):
+
+Change connect-src to your production API domain
+e.g. connect-src 'self' https://api.yourdomain.com wss://api.yourdomain.com;
+
+Remove 'unsafe-eval' if you’re building with a minifier (for extra safety) -->
