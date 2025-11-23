@@ -9,7 +9,7 @@ It’s built to simulate what production-grade monitoring tools like Grafana or 
 
 - Collects CPU, memory, disk, and network metrics from agents
 - Streams those metrics in real-time using Kafka
-- Stores data in both MongoDB (Node.js backend) and PostgreSQL (Spring Boot backend)
+- Stores data in both MongoDB (Node.js backend) and PostgreSQL
 - Caches live updates with Redis for faster reads
 - Displays interactive charts and system health status on a React dashboard
 - Detects unusual spikes using a simple statistical anomaly check
@@ -30,7 +30,6 @@ The goal is to show **real-time data flow**, **distributed architecture**, and *
 
 **Frontend:** React, Tailwind CSS, Recharts, Socket.IO  
 **Backend 1:** Node.js (Express), MongoDB, Redis, Kafka  
-**Backend 2:** Spring Boot WebFlux, PostgreSQL, Redis, Kafka  
 **Messaging:** Apache Kafka  
 **Cache:** Redis  
 **Anomaly Logic:** Simple moving average threshold (CPU spikes)
@@ -59,11 +58,6 @@ redis-server
 cd backend-node
 npm install
 npm run dev
-
-
-#Run Spring Boot Backend (Reactive)
-cd backend-spring
-./mvnw spring-boot:run
 
 
 #Run React Dashboard
